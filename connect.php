@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $jobrole = $_POST['jobrole'];
 
 
-
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
@@ -32,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-
         $stmt = $conn->prepare("INSERT INTO user1 (fullname, email, password, department, jobrole) VALUES (:fullname, :email, :password, :department, :jobrole)");
 
 
@@ -46,14 +43,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->execute();
 
-header('Location: login.php?status=success');
-exit();
+        
+      // Ensure no output before this point
+      header('Location: login.php?status=success');
+      exit();
 
-} catch (PDOException $e) {
-// Ensure no output before this point
-header('Location: login.php?status=error');
-exit();
-}
+  } catch (PDOException $e) {
+      // Ensure no output before this point
+      header('Location: login.php?status=error');
+      exit();
+  }
 
 
     $conn = null;
