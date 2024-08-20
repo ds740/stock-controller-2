@@ -1,0 +1,212 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.5s linear;
+    background: rgb(226, 207, 212);
+    z-index: 10;
+}
+
+.sidebar:hover {
+    width: 250px;
+    transition: width 0.3s;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover, .active {
+    transition: 0.2s;
+    background: #ffffff58;
+}
+
+.menu a {
+    color: #070707;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i {
+    font-size: 2rem;
+}
+
+.help {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+}
+
+.logout {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+.main--content {
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+    padding: 1rem;
+    
+}
+
+
+
+.card--container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+
+
+.card--wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2rem; 
+}
+
+.card--header {
+    
+    border-radius: 30px;
+    padding: 3.5rem;
+    height: 220px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+.card-image {
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    margin-bottom: 1rem;
+}
+
+
+
+.card--header:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 1rem;
+}
+
+.card-1 {
+    background: url('src/item1.png') no-repeat center center; 
+    background-size: contain;
+    background-color: rgb(197, 238, 238);
+}
+
+.card-2 {
+    background: url('src/location1.png') no-repeat center center; 
+    background-size: contain;
+    background-color: rgb(255, 255, 255);
+}
+
+.card-3 {
+    background: url('src/supplier1.png') no-repeat center center; 
+    background-size: contain;
+    background-color: rgb(251, 251, 249);
+}
+
+.card-4 {
+    background: url('src/reports1.png') no-repeat center center; 
+    background-size: contain;
+    background-color: rgb(241, 204, 176);
+}
+
+.chart-container {
+    background: #fff;
+    padding: 0.3rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 700px; 
+    height: 300px; 
+}
+
+.chart-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

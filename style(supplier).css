@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.5s linear;
+    background: rgb(226, 207, 212);
+    z-index: 10;
+}
+
+.sidebar:hover {
+    width: 250px;
+    transition: width 0.3s;
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover, .active {
+    transition: 0.2s;
+    background: #ffffff58;
+}
+
+.menu a {
+    color: #070707;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu a span {
+    overflow: hidden;
+}
+
+.menu a i {
+    font-size: 2rem;
+}
+
+.help {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+}
+
+.logout {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.container {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.filter {
+    display: flex;
+    align-items: left;
+    gap: 10px;
+}
+
+.filter select, .filter input {
+    padding: 10px;
+    width: 100px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px; 
+    width: 100%; 
+    
+}
+
+
+.search label {
+    font-weight: 500;
+    font-size: 16px; 
+    
+}
+.search input[type="search"] {
+    width: 100%; 
+    max-width: 500px; 
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+
+.search input[type="search"]::placeholder {
+    color: #888;
+}
+
+.newsupplierBtn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.newsupplierBtn button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(175, 61%, 54%);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsupplierBtn button:hover {
+    background-color: #346d5f;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+thead th {
+    background-color: #e9ecef;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.empty {
+    color: #777;
+}
+
+table tr td img{
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.popup .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.popup header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.popup .modalTitle {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.popup .closeBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup .closeBtn:hover {
+    color: #ff0000;
+}
+
+.popup .body {
+    margin-top: 20px;
+}
+
+.popup .form_control {
+    margin-bottom: 15px;
+}
+
+.popup .form_control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.popup .form_control input,
+.popup .form_control select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup .submitBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(175, 61%, 54%);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.popup .submitBtn:hover {
+    background-color: #346d5f;
+}
+
+
