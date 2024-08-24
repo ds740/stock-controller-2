@@ -22,14 +22,17 @@ try {
 ?>
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="js/main.js"></script>
-    <link rel="stylesheet" href="style(supplier).css">
-    <link rel="stylesheet" href="style(chatbot).css">
+
+    <link rel="stylesheet" href="styles/style(supplier).css">
+    <link rel="stylesheet" href="styles/style(chatbot).css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard</title>
@@ -45,7 +48,7 @@ try {
                 </a>
             </li>
             <li>
-                <a href="inventory.php">
+                <a href="inv-dash.php">
                     <i class='bx bxs-component'></i>
                     <span class="text">Inventory</span>
                 </a>
@@ -85,6 +88,9 @@ try {
 
 
 
+ 
+
+
 
     
 <div class="container">
@@ -101,12 +107,11 @@ try {
                        </select> entries 
                     </div> 
 
-                  
-    <div class="search">
-        <label for="search">Search:</label>
-        <input type="search" name="" id="search" placeholder="Search supplier aa by name">
-    </div> 
-
+                    
+                    <div class="search">
+    <label for="search">Search:</label>
+    <input type="search" name="supplier-search" id="search" placeholder="Search supplier by name">
+</div>
 
 
                     
@@ -114,7 +119,6 @@ try {
     <button id="openFormBtn">Add New Supplier</button> 
 </div>
 </header>
-
 
                     <table> 
 
@@ -129,39 +133,42 @@ try {
                                 <th> Contract Terms </th> 
                                 <th> Contact  </th> 
                                  <th> phone no  </th> 
-                                 <th>Action</th>
+                                 <th>Edit</th>
+                                <th>Delete</th>
 
                     </tr> 
                         </thead>
 
-
                         <tbody class="supplier-info">
-                <?php if (empty($suppliers)): ?>
-                    <tr><td class="empty" colspan="9">No data available in table</td></tr>
-                <?php else: ?>
-                    <?php foreach ($suppliers as $supplier): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($supplier['supplier_number']); ?></td>
-                            
-                            <td><?php echo htmlspecialchars($supplier['supplier_name']); ?></td>
-                            <td><?php echo htmlspecialchars($supplier['company']); ?></td>
-                            <td><?php echo htmlspecialchars($supplier['city']); ?></td>
-                            <td><?php echo htmlspecialchars($supplier['delivery_terms']); ?></td>
-                            <td><?php echo htmlspecialchars($supplier['contact']); ?></td>
-                            <td><?php echo htmlspecialchars($supplier['phone_no']); ?></td>
-                            <td>
-                                <i class='bx bx-edit-alt'></i>
-                                <i class='bx bxs-trash'></i>
-                                <i class='bx bxs-low-vision'></i>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </tbody>
+    <?php if (empty($suppliers)): ?>
+        <tr><td class="empty" colspan="9">No data available in table</td></tr>
+    <?php else: ?>
+        <?php foreach ($suppliers as $supplier): ?>
+            <tr data-id="<?php echo htmlspecialchars($supplier['id']); ?>">
+                <td><?php echo htmlspecialchars($supplier['supplier_number']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['supplier_name']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['company']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['city']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['delivery_terms']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['contact']); ?></td>
+                <td><?php echo htmlspecialchars($supplier['phone_no']); ?></td>
+                <td>
+                    <i class='bx bx-edit'></i>
+                </td>
+                <td>
+                    <a href='#' class='delete-icon' data-id='<?php echo htmlspecialchars($supplier["id"]); ?>'>
+                        <i class='bx bxs-trash'></i>
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</tbody>
+
+            
         </table>
 
            
-
 
 
 
@@ -180,7 +187,6 @@ try {
             <button class="closeBtn" id="closeFormBtn">&times;</button> 
         </header>
         <div class="body">
-
 
         <form action="supplier_connect.php" method="post">
 
@@ -202,7 +208,6 @@ try {
                     <label for="city">City:</label>
                     <input type="text" name="city" id="city" required>
                 </div>
-
 
                 <div class="form_control">
                 <label for="delivery_terms">Delivery Terms</label>
@@ -228,12 +233,17 @@ try {
             </form>
         </div>
     </div>
+
+    <script src="supplier.js"></script> 
 </div>
 
 
-    <script src="supplier.js"></script>
-
-
     <?php include 'chatbot.php'; ?>
-</body>
-</html>
+
+
+
+
+
+
+        </body>
+        </html>
