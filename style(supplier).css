@@ -12,6 +12,7 @@
 body {
     display: flex;
     min-height: 100vh;
+    background-color: #f7f7f7;
 }
 
 .sidebar {
@@ -25,7 +26,7 @@ body {
     color: #fff;
     overflow: hidden;
     transition: width 0.5s linear;
-    background: rgb(226, 207, 212);
+    background: rgb(70, 77, 84);
     z-index: 10;
 }
 
@@ -37,13 +38,14 @@ body {
 .logo {
     height: 80px;
     padding: 16px;
+    text-align: center;
 }
 
 .menu {
     height: 88%;
-    position: relative;
     list-style: none;
     padding: 0;
+    margin-top: 20px;
 }
 
 .menu li {
@@ -53,13 +55,13 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.menu li:hover, .active {
-    transition: 0.2s;
-    background: #ffffff58;
+.menu li:hover, .menu .active {
+    background: #495057;
+    transition: background-color 0.2s;
 }
 
 .menu a {
-    color: #070707;
+    color: #ffffff;
     font-size: 14px;
     text-decoration: none;
     display: flex;
@@ -89,22 +91,13 @@ body {
     width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
 .container {
     flex: 1;
     padding: 20px;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
     background: #ffffff;
     border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
     overflow: auto;
 }
 
@@ -115,51 +108,65 @@ header {
     margin-bottom: 20px;
 }
 
-
-
-
-
 .filter {
     display: flex;
-    align-items: left;
+    align-items: center;
     gap: 10px;
 }
 
 .filter select, .filter input {
     padding: 10px;
-    width: 100px; 
+    width: 120px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-.search {
+.search--box {
+    background: #f9f9f9;
+    border-radius: 25px;
+    color: #6366f1;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 10px; 
-    width: 100%; 
-    
+    align-items: center;
+    gap: 10px;
+    padding: 5px 20px;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #4b5563;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search--box input {
+    background: transparent;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    color: #4b5563;
+}
+
+.search--box input:focus {
+    outline: none;
+    color: #111827;
+}
+
+.search--box i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #4b5563;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.search--box i:hover {
+    transform: scale(1.2);
+    color: #6366f1;
+}
+
+.search--box:focus-within {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-color: #6366f1;
 }
 
 
-.search label {
-    font-weight: 500;
-    font-size: 16px; 
-    
-}
-.search input[type="search"] {
-    width: 100%; 
-    max-width: 500px; 
-    padding: 12px;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    font-size: 16px; 
-}
-
-
-.search input[type="search"]::placeholder {
-    color: #888;
-}
 
 .newsupplierBtn {
     text-align: center;
@@ -171,19 +178,20 @@ header {
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: hsl(175, 61%, 54%);
+    background-color: #22c55e;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .newsupplierBtn button:hover {
-    background-color: #346d5f;
+    background-color: #16a34a;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 thead {
@@ -191,7 +199,7 @@ thead {
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px 15px;
     border: 1px solid #ddd;
     text-align: left;
 }
@@ -214,19 +222,12 @@ tbody tr:hover {
 
 .empty {
     color: #777;
+    text-align: center;
 }
 
-table tr td img{
+table tr td img {
     vertical-align: middle;
 }
-
-
-
-
-
-
-
-
 
 .popup {
     display: none; 
@@ -304,7 +305,7 @@ table tr td img{
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color: hsl(175, 61%, 54%);
+    background-color: #22c55e;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -313,7 +314,5 @@ table tr td img{
 }
 
 .popup .submitBtn:hover {
-    background-color: #346d5f;
+    background-color: #16a34a;
 }
-
-
