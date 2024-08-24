@@ -7,11 +7,14 @@ include('database/inv_connect.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style(report).css">
-    <link rel="stylesheet" href="style(loc).css">
+    <link rel="stylesheet" href="styles/style(report).css">
+   
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Reports </title>
+    
+    
+    
     <style>
         .filter-btn {
             margin: 10px 0;
@@ -178,27 +181,72 @@ include('database/inv_connect.php');
         <div class="title-report">
             <h2>Overview Reports</h2>
             <button class="report-btn">View Reports</button>
-
-
-
         </div>
         
-    <table> 
-        <tr> 
-            <th>Date </th> 
-             <th>Time Period?  </th> 
-              <th>type </th> 
-               <th>export </th> 
-</tr> 
-</table> 
+     <div class="container-2">
+    <div class="overview">
+        <div class="title-report">
+            <h2>Overview Reports</h2>
+        </div>
         
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time Period</th>
+                    <th>Type</th>
+                    <th>Export</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>Inventory Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>Supplier Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>Location Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>This Month's Despatched Items Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>Most Seller Items Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+                <tr>
+                    <td>August 2024</td>
+                    <td>June-July</td>
+                    <td>Highest Item Supplier Report</td>
+                    <td><button class="export-btn">Export</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
     <div class="today-report">
         <div class="title-report">
             <h2>Today's Report</h2>
         </div>
+    
     </div>
 </div>
+
 
 
     
