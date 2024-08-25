@@ -124,7 +124,6 @@ include('database/inv_connect.php');
 
 
 
-
         <div class="card--container">
             <h3 class="items-title">New Items</h3>
             <div class="card--wrapper">
@@ -152,7 +151,6 @@ include('database/inv_connect.php');
                 </div>
                 
 
-
                 <div class="card--header card-3">
                     <div class="amount">
                         <span class="title"></span>
@@ -173,6 +171,25 @@ include('database/inv_connect.php');
 
 </div> 
 </div>
+
+
+
+
+<div id="reportModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Report Preview</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <p>This is where the report content or a preview will be displayed.</p>
+        </div>
+        <div class="modal-footer">
+            <button id="downloadBtn" class="export-btn">Download Report</button>
+        </div>
+    </div>
+</div>
+
 
 
 
@@ -248,9 +265,10 @@ include('database/inv_connect.php');
 </div>
 
 
-
     
 <?php include 'chatbot.php'; ?>
+
+<script src="report.js"></script> 
         
 
     </body>
